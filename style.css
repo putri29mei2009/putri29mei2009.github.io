@@ -1,0 +1,203 @@
+
+/* Reset and base */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: 'Comic Neue', cursive, sans-serif;
+    background: #ffe3e3;
+    color: #40394a;
+    overflow-x: hidden;
+  }
+  h1, h2, h3 {
+    margin: 0.5em 0 0.3em;
+  }
+  p {
+    margin: 0.3em 0 1em;
+    line-height: 1.4;
+  }
+  a {
+    color: #ff6f91;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+
+  /* Container */
+  .container {
+    max-width: 350px;
+    margin: auto;
+    padding: 10px 15px 50px;
+  }
+
+  /* Header */
+  header {
+    background: #ffafcc;
+    text-align: center;
+    padding: 1.5em 1em 1em;
+    border-radius: 0 0 30px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 5px 8px rgba(255 175 204 / 0.6);
+  }
+  header h1 {
+    font-size: 2.4rem;
+    color: #fff;
+    text-shadow: 2px 2px #b55472;
+    user-select: none;
+    margin-bottom: 0.2em;
+  }
+
+  /* Tabs styling using radio inputs */
+  nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  input[type="radio"] {
+    display: none;
+  }
+
+  label.tab-label {
+    background: #fcd5ce;
+    border-radius: 20px;
+    padding: 7px 12px;
+    font-weight: 700;
+    color: #9e6990;
+    font-size: 0.9rem;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  input[type="radio"]:checked + label.tab-label {
+    background: #9e6990;
+    color: #fff;
+  }
+
+  /* Section style */
+  section {
+    background: #fff0f6;
+    border-radius: 25px;
+    padding: 15px 20px 20px;
+    margin-top: 25px;
+    box-shadow: 0 7px 14px #ffafdccc;
+    display: none;
+  }
+
+  /* Show section when corresponding radio is checked */
+  #tab-beranda:checked ~ main #beranda,
+  #tab-tentang:checked ~ main #tentang-saya,
+  #tab-pendidikan:checked ~ main #pendidikan,
+  #tab-pengalaman:checked ~ main #pengalaman,
+  #tab-project:checked ~ main #project,
+  #tab-kontak:checked ~ main #kontak {
+    display: block;
+  }
+
+  section h2 {
+    color: #bb647a;
+    font-size: 1.7rem;
+    border-bottom: 2px dotted #f99ca2;
+    padding-bottom: 5px;
+  }
+
+  /* Cute icons styling using emojis */
+  .icon {
+    font-size: 1.2rem;
+    margin-right: 8px;
+  }
+
+  /* List styling */
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  li {
+    background: #ffd1dc;
+    margin-bottom: 7px;
+    border-radius: 16px;
+    padding: 10px 12px;
+    box-shadow: 2px 2px 5px #f7b3c2;
+    transition: transform 0.2s;
+  }
+  li:hover {
+    transform: scale(1.03);
+    background: #ffb3c1;
+  }
+
+  /* Avatar photo style */
+  .avatar {
+    display: block;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    border: 5px solid #ffb3c1;
+    box-shadow: 0 6px 10px #f497b2cc;
+    object-fit: cover;
+  }
+
+  /* Project images style */
+  .project-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .project-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #ffd1dc;
+    padding: 10px 12px;
+    border-radius: 16px;
+    box-shadow: 2px 2px 5px #f7b3c2;
+    transition: transform 0.2s;
+  }
+  .project-item:hover {
+    transform: scale(1.03);
+    background: #ffb3c1;
+  }
+  .project-img {
+    width: 70px;
+    height: 70px;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 2px 2px 6px #f497b2cc;
+    flex-shrink: 0;
+  }
+  .project-desc {
+    flex-grow: 1;
+    font-weight: 600;
+    color: #6e3b4f;
+    font-size: 1rem;
+  }
+
+  /* Responsive Typography */
+  @media (max-width: 380px) {
+    header h1 {
+      font-size: 2rem;
+    }
+    section h2 {
+      font-size: 1.4rem;
+    }
+    label.tab-label {
+      padding: 6px 10px;
+      font-size: 0.8rem;
+    }
+    .avatar {
+      width: 100px;
+      height: 100px;
+      border-width: 4px;
+    }
+    .project-img {
+      width: 60px;
+      height: 60px;
+    }
+  }

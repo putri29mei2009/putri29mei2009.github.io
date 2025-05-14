@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>Portofolio Uti</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Portofolio pribadi Syafira Putri Nazarina, siswa SMKN 1 Bawang. Menampilkan profil, pendidikan, pengalaman, dan projek." />
+  <style>
+    main section {
+      display: none;
+    }
+
+    main section#Beranda {
+      display: block;
+    }
+
+    nav a.active {
+      font-weight: bold;
+      color: darkblue;
+    }
+
+    img.avatar {
+      width: 150px;
+      border-radius: 50%;
+      display: block;
+      margin: 20px auto;
+    }
+
+    .project-list {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .project-item img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 10px;
+    }
+
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Portofolio Uti</h1>
+    <nav>
+      <ul>
+        <li><a href="#" class="active" onclick="showSection(event, 'Beranda')">Beranda</a></li>
+        <li><a href="#" onclick="showSection(event, 'Tentang')">Tentang</a></li>
+        <li><a href="#" onclick="showSection(event, 'Pendidikan')">Pendidikan</a></li>
+        <li><a href="#" onclick="showSection(event, 'Pengalaman')">Pengalaman</a></li>
+        <li><a href="#" onclick="showSection(event, 'Project')">Project</a></li>
+        <li><a href="#" onclick="showSection(event, 'Kontak')">Kontak</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section id="Beranda">
+      <h2><span class="icon">🏡</span> Beranda</h2>
+      <img class="avatar" src="uti.jpeg" alt="Foto Profil" />
+      <p>Selamat datang di portofolio pribadi saya!</p>
+    </section>
+
+    <section id="Tentang">
+      <h2><span class="icon">👩‍💻</span> Tentang Saya</h2>
+      <p>Nama saya Syafira Putri Nazarina. Saya adalah anak perempuan pertama dari dua bersaudara. Sekarang saya adalah siswa yang bersekolah di SMKN 1 Bawang.</p>
+    </section>
+
+    <section id="Pendidikan">
+      <h2><span class="icon">🎓</span> Pendidikan</h2>
+      <ul>
+        <li><strong>PAUD Putra Parikesit</strong></li>
+        <li><strong>TK PGRI 1 Petir</strong></li>
+        <li><strong>SD Negeri 5 Petir</strong></li>
+        <li><strong>MTs Ath-Thahiriyah Pucungbedug</strong></li>
+        <li><strong>SMK Negeri 1 Bawang</strong></li>
+      </ul>
+    </section>
+
+    <section id="Pengalaman">
+      <h2><span class="icon">💼</span> Pengalaman</h2>
+      <ul>
+        <li><strong>Lomba Dokter Kecil</strong></li>
+        <li><strong>Juara 1 Lomba Tilawah Membaca Al-Qur'an</strong></li>
+        <li><strong>Turnamen Futsal</strong></li> 
+      </ul>
+    </section>
+
+    <section id="Project">
+      <h2><span class="icon">🚀</span> Project</h2>
+      <div class="project-list">
+        <div class="project-item">
+          <img src="Websitemput.png" alt="Project 1" />
+        </div>
+        <div class="project-item">
+          <img src="Biodata.png" alt="Project 2" />
+        </div>
+      </div>
+    </section>
+
+    <section id="Kontak">
+      <h2><span class="icon">📬</span> Kontak</h2>
+      <ul>
+        <li>Email: <a href="mailto:putrinazaa968@gmail.com">putrinazaa968@gmail.com</a></li>
+        <li>Instagram: <a href="https://www.instagram.com/uutiieyy_?igsh=dTljcnpoMWR1MThy" target="_blank">@uutiieyy</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <script>
+    function showSection(event, sectionId) {
+      event.preventDefault();
+      const sections = document.querySelectorAll('main section');
+      sections.forEach(section => {
+        section.style.display = section.id === sectionId ? 'block' : 'none';
+      });
+
+      const links = document.querySelectorAll('nav a');
+      links.forEach(link => link.classList.remove('active'));
+      event.target.classList.add('active');
+    }
+  </script>
+</body>
+</html>
+
